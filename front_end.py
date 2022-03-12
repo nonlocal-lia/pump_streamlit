@@ -7,6 +7,7 @@ from sklearn.preprocessing import LabelEncoder
 import matplotlib.pyplot as plt
 plt.style.use('seaborn')
 
+st.set_page_config(layout='wide')
 st.title('Tanzania Water Wells')
 
 @st.cache

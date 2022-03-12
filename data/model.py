@@ -2,9 +2,9 @@
 import pandas as pd
 import numpy as np
 import pickle
+import joblib
 from sklearn.preprocessing import StandardScaler, LabelEncoder, OrdinalEncoder
 from sklearn.compose import ColumnTransformer
-from sklearn.ensemble import RandomForestClassifier
 from xgboost import XGBClassifier
 from sklearn.pipeline import Pipeline
 
@@ -34,7 +34,6 @@ pipe_xgb = Pipeline(steps=[
 pipe_xgb.fit(X_train, y_train)
 
 # Save Model
-import joblib
 joblib.dump(pipe_xgb, 'model.pkl')
 print("Model dumped!")
 
