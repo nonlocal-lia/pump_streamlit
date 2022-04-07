@@ -60,9 +60,20 @@ data_load_state = st.text('Loading data...')
 data = load_data()
 data_load_state.text("Done! (using st.cache)")
 
+st.subheader('What Is This?')
+st.markdown(
+    """
+    This is a dashboard for data from the Pump It Up competetion showing the functioning of water pumps in Tanzania along with a live version of a classification model
+    that predicts the functioning of hypothetical water pumps from user input.
+    For more information on its construction go to https://github.com/nonlocal-lia/pump_it_up_competition.
+    """
+    )
+
 if st.checkbox('Show raw data'):
     st.subheader('Raw data')
     st.write(data.head())
+
+st.subheader('Options for Display Map')
 interesting_variables = ['funder', 'installer', 'management_group',
  'permit', 'water_quality', 'quantity', 'source',
  'waterpoint_type', 'extraction_type_class', 'public_meeting']
